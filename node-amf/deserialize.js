@@ -43,7 +43,7 @@ AMFDeserializer.prototype.resetRefs = function(){
 AMFDeserializer.prototype.shiftBytes = function( n ){
 	if( n === 0 ){
 		return '';
-	} 
+	}
 	var s = this.s.slice( 0, n );
 	if( s.length !== n ){
 		throw new Error("Not enough input to read "+n+" bytes, got "+s.length+", offset "+this.i);
@@ -407,10 +407,10 @@ AMFDeserializer.prototype.readHeader = function(){
 	this.resetRefs();
 	var name = this.readUTF8( amf.AMF0 );
 	var Header = amf.header( name, '' );
-	Header.mustunderstand = Boolean( this.readU8() );
+    Header.mustunderstand = Boolean( this.readU8() );
 	var len = this.readU32(); // we won't actually use the length
 	// @todo lazy creation of header by storing known header byte length
-	Header.value = this.readValue( amf.AMF0 );
+    Header.value = this.readValue( amf.AMF0 );
 	return Header;
 }
 

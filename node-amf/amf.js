@@ -6,6 +6,7 @@
 var AMFTraits = require('./traits').AMFTraits;
 var AMFPacket = require('./packet').AMFPacket;
 var AMFMessage = require('./message').AMFMessage;
+var AMFHeader = require('./header').AMFHeader;
 var AMFSerializer = require('./serialize').AMFSerializer;
 var AMFDeserializer = require('./deserialize').AMFDeserializer;
 
@@ -36,8 +37,8 @@ exports.message = function( value, requestURI, responseURI ){
 /**
  * @return AMFHeader
  */
-exports.header = function( value, requestURI, responseURI ){
-	return new AMFMessage( value, requestURI, responseURI );
+exports.header = function( name, value ){
+	return new AMFHeader( name, value );
 }
  
 
