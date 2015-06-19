@@ -7,7 +7,7 @@ var amf = require('./amf');
 var utils = require('./utils');
 var utf8 = require('./utf8');
 var bin = require('./bin');
-var NF = require('nodeframe');
+// var NF = require('nodeframe');
 
 
 /** export constructor */
